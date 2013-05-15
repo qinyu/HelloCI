@@ -1,6 +1,7 @@
 package com.tw.demo;
 
 import android.test.ActivityInstrumentationTestCase2;
+import android.view.ViewGroup;
 
 /**
  * This is a simple framework for a test of an Application.  See
@@ -16,6 +17,10 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 
     public MainActivityTest() {
         super("com.tw.demo", MainActivity.class);
+    }
+
+    public void testHelloWorldShowed() {
+//        assetT
     }
 
 }
