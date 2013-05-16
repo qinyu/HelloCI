@@ -20,7 +20,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     }
 
     public void testHelloWorldShowed() {
-//        assetT
+        fail("Intend fail");
     }
 
 }
