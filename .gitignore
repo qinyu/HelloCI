@@ -9,3 +9,6 @@ target
 *.ipr
 *.iws
 .DS_store
+
+reports.html
+screenshot_*
