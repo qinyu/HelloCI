@@ -2,6 +2,7 @@ package com.tw.demo;
 
 import android.test.ActivityInstrumentationTestCase2;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * This is a simple framework for a test of an Application.  See
@@ -20,7 +21,8 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     }
 
     public void testHelloWorldShowed() {
-        fail("Intend fail");
+        String text = ((TextView) getActivity().findViewById(R.id.text)).getText().toString();
+        assertEquals("Hello world hasn't been shown", "Hello World, MainActivity", text);
     }
 
 }
