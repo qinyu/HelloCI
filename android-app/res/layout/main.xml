@@ -4,12 +4,24 @@
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
         >
-    <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="test"/>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="test"/>
+
     <TextView
             android:id="@+id/text"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Hello World, MainActivity"
             />
+
+    <WebView
+            android:id="@+id/web"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+    </WebView>
 </LinearLayout>
 

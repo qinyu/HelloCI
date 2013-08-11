@@ -1,8 +1,11 @@
 package com.tw.demo;
 
 import android.test.ActivityInstrumentationTestCase2;
+import android.test.MoreAsserts;
+import android.test.ViewAsserts;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import com.jayway.android.robotium.solo.Solo;
 
 /**
  * This is a simple framework for a test of an Application.  See
@@ -16,8 +19,10 @@ import android.widget.TextView;
  */
 public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActivity> {
 
+    private Solo solo;
+
     public MainActivityTest() {
-        super("com.tw.demo", MainActivity.class);
+        super(MainActivity.class);
     }
 
     public void testHelloWorldShowed() {
@@ -25,4 +30,15 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
         assertEquals("Hello world hasn't been shown", "Hello World, MainActivity", text);
     }
 
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp();
+        solo = new Solo(getInstrumentation(), getActivity());
+    }
+
+    @Override
+    protected void tearDown() throws Exception {
+        super.tearDown();
+        solo.finishOpenedActivities();
+    }
 }
