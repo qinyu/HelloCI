@@ -3,10 +3,6 @@ package com.tw.demo;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.Window;
-import android.webkit.WebChromeClient;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
 public class MainActivity extends Activity {
 
@@ -15,18 +11,23 @@ public class MainActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        WebView webView = new WebView(this);
-        String url = "http://ieat.thoughtworks.biz";
-        webView.loadUrl(url);
+        setContentView(R.layout.main);
+        if (getLastNonConfigurationInstance() != null) {
+            asyncTask = (AsyncTask<Void, Void, Boolean>) getLastNonConfigurationInstance();
+            // check the
+        } else {
+            asyncTask = new AsyncTask<Void, Void, Boolean>() {
+                @Override
+                protected Boolean doInBackground(Void... params) {
+                    return null;
+                }
+            };
+            asyncTask.execute();
+        }
+    }
 
-        WebViewClient client = new WebViewClient();
-        client.shouldOverrideUrlLoading(webView, url);
-        webView.setWebViewClient(client);
-
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.getSettings().setSavePassword(false);
-        setContentView(webView);
-
+    @Override
+    public Object onRetainNonConfigurationInstance() {
+        return asyncTask;
     }
 }
