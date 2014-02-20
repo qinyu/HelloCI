@@ -1,33 +1,25 @@
 package com.tw.demo;
 
 import android.app.Activity;
-import android.os.AsyncTask;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import com.tw.demo.activity.EditTextActivity;
+import com.tw.demo.activity.SpinnerActivity;
 
 public class MainActivity extends Activity {
 
-    private AsyncTask<Void, Void, Boolean> asyncTask;
-
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
-        if (getLastNonConfigurationInstance() != null) {
-            asyncTask = (AsyncTask<Void, Void, Boolean>) getLastNonConfigurationInstance();
-            // check the
-        } else {
-            asyncTask = new AsyncTask<Void, Void, Boolean>() {
-                @Override
-                protected Boolean doInBackground(Void... params) {
-                    return null;
-                }
-            };
-            asyncTask.execute();
-        }
+        setContentView(R.layout.function_lists);
     }
 
-    @Override
-    public Object onRetainNonConfigurationInstance() {
-        return asyncTask;
+    public void spinner(View view) {
+        startActivity(new Intent(this, SpinnerActivity.class));
+    }
+
+    public void text(View view) {
+        startActivity(new Intent(this, EditTextActivity.class));
     }
 }

@@ -1,8 +1,8 @@
 Feature: Main Activity screen
 
-  Scenario: I can see button and text on Main Actvivity
-    Then I wait for the "MainActivity" screen to appear
-    Then I see "Hello World, MainActivity"
-    Then I see button with text "test"
-    Then take picture
+  Scenario: I can see on Spinner Activity
+    Given I wait for the "MainActivity" screen to appear
+    And I see "Spinner"
+    When I touch the "Input View" text
+    Then I wait for "ClearText" to appear
 

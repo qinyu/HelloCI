@@ -1,7 +1,7 @@
 package com.tw.demo;
 
+import android.annotation.SuppressLint;
 import android.test.ActivityInstrumentationTestCase2;
-import android.view.ViewGroup;
 import android.widget.TextView;
 
 /**
@@ -14,15 +14,21 @@ import android.widget.TextView;
  * -e class com.tw.demo.MainActivityTest \
  * com.tw.demo.tests/android.test.InstrumentationTestRunner
  */
+@SuppressLint("NewApi")
 public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActivity> {
 
     public MainActivityTest() {
         super("com.tw.demo", MainActivity.class);
     }
 
-    public void testHelloWorldShowed() {
-        String text = ((TextView) getActivity().findViewById(R.id.text)).getText().toString();
-        assertEquals("Hello world hasn't been shown", "Hello World, MainActivity", text);
+    public void testShowSpinnerButton() {
+        String text = ((TextView) getActivity().findViewById(R.id.spinner_btn)).getText().toString();
+        assertEquals("Should show spinner button", "Spinner", text);
+    }
+
+    public void testShowInputViewButton() {
+        String text = ((TextView) getActivity().findViewById(R.id.input_view_btn)).getText().toString();
+        assertEquals("Should show input view button", "Input View", text);
     }
 
 }
