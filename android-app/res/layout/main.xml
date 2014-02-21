@@ -27,7 +27,7 @@
         Creates a spinner widget called Spinner01, within the Linear Layout
         The prompt text comes from the string "planet_prompt" in strings.xml
     -->
-    <Spinner 
+    <Spinner
         android:id="@+id/Spinner01"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
@@ -38,7 +38,7 @@
     <!--
         Creates a TextView called SpinnerResult, below the spinner.
     -->
-    <TextView 
+    <TextView
         android:id="@+id/SpinnerResult" android:text="Result"
         android:layout_height="fill_parent" android:textSize="10pt"
         android:textStyle="bold" android:gravity="center"

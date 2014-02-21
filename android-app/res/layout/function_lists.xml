@@ -5,22 +5,25 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <TextView
+    <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Main Page"
-            android:id="@+id/textView"/>
+            android:text=""
+            android:id="@+id/textView"
+            android:background="@null"/>
 
-    <Button android:layout_width="fill_parent"
+    <Button
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/spinner_btn"
             android:text="Spinner"
             android:onClick="spinner"/>
-    <Button android:layout_width="fill_parent" android:layout_height="wrap_content"
+
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/input_view_btn"
             android:text="Input View"
-            android:onClick="text"
-            />
+            android:onClick="text"/>
 
 </LinearLayout>
